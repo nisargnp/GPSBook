@@ -45,7 +45,7 @@
 	* latitude - String
 	* name - String
 
-** Architecture diagram
+## Architecture diagram
 <br>
-<img src="https://github.com/nisargnp/GPSBook/tree/master/resources/architecture_diagram.png" hspace="20">
+<img src="https://github.com/nisargnp/GPSBook/blob/master/resources/architecture_diagram.png" hspace="20">
 <br>
