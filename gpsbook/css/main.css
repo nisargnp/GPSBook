@@ -1,0 +1,214 @@
+/*I love me some border-box*/
+* {
+    box-sizing: border-box;
+}
+/*This just stops me getting horizontal scrolling if anything overflows the width*/
+body {
+    overflow-x: hidden;
+}
+/*Just removing default browser padding/margin*/
+html,
+body {
+    padding: 0;
+    margin: 0;
+    color: #ebebeb;
+}
+/*Flexbox gives us the flexiness we need. The top just stays put as there is no scrolling on the body due to the page never exceeding viewport height*/
+.Top {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: lightgreen;
+    font-size: 3rem;
+    position: relative;
+    z-index: 10;
+    height: 100px;
+    color: darkgreen;
+    border-bottom: 3px solid purple;
+}
+
+/*This is our main wrapping element, it's made 100vh high to ensure it is always the correct size and then moved into place and padded with negative margin and padding*/
+.Container {
+    display: flex;
+    overflow: hidden;
+    height: 100vh;
+    margin-top: -100px;
+    margin-bottom: -500px;
+    padding-top: 100px;
+    position: relative;
+    width: 100%;
+    backface-visibility: hidden;
+    will-change: overflow;
+    padding-bottom: 100px;
+}
+/*All the scrollable sections should overflow and be whatever height they need to be. As they are flex-items (due to being inside a flex container) they could be made to stretch full height at all times if needed.
+WebKit inertia scrolling is being added here for any present/future devices that are able to make use of it.
+*/
+.Left,
+.Middle,
+.Right {
+    overflow: auto;
+    height: auto;
+    padding: .5rem;
+    -webkit-overflow-scrolling: touch;
+    -ms-overflow-style: none;
+    color: purple;
+
+    padding-bottom:  100px;
+}
+/*Entirely optional – just wanted to remove the scrollbar on WebKit browsers as I find them ugly*/
+.Left::-webkit-scrollbar,
+/*.Middle::-webkit-scrollbar,*/
+.Right::-webkit-scrollbar {
+    display: none;
+}
+/*  Left and Right are set sizes while the Middle is set to flex one so it occupies all remaining space. This could be set as a width too if prefereable, perhaps using calc.*/
+.Left {
+    width: 15%;
+    background-color: #AF7AC5;
+}
+
+.Middle {
+    flex: 1;
+}
+
+.Right {
+    width: 15%;
+    background-color: #AF7AC5;
+}
+
+.Bottom {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: lightgreen;
+    font-size: 3rem;
+    position: absolute;
+    height: 100px;
+    color: darkgreen;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    border-top: 3px solid purple;
+}
+
+@import "https://fonts.googleapis.com/css?family=Raleway";
+#contactButton { 
+  -webkit-user-select: none; /* Chrome/Safari */        
+  -moz-user-select: none; /* Firefox */
+  -ms-user-select: none; /* IE10+ */
+  /*margin: 4em auto;*/
+  width: 50%; 
+  height: 60%; 
+  line-height: 30px;
+  background: darkgreen;
+  color: white;
+  font-weight: 700;
+  text-align: center;
+  cursor: pointer;
+  border: 1px solid purple;
+}
+
+#contactButton:hover { background: purple; }
+#contactButton:active { background: purple; }
+
+#contactForm { 
+  display: none;
+
+  border: 6px solid darkgreen; 
+  padding: 2em;
+  width: 400px;
+  text-align: center;
+  background: #fff;
+  position: fixed;
+  top:50%;
+  left:50%;
+  transform: translate(-50%,-50%);
+  -webkit-transform: translate(-50%,-50%)
+  
+}
+
+#contactForm h1 {
+    color: darkgreen;
+}
+
+#contactForm input, #contactForm textarea { 
+  margin: .8em auto;
+  font-family: inherit; 
+  text-transform: inherit; 
+  font-size: inherit;
+  color: darkgreen;
+  display: block; 
+  width: 280px; 
+  padding: .4em;
+}
+#contactForm textarea { height: 80px; resize: none; }
+
+#contactForm .formButton { 
+  width: 140px;
+  display: inline-block;
+  
+  background: darkgreen;
+  color: #fff;
+  font-weight: 100;
+  font-size: 1.0em;
+  border: none;
+  height: 30px;
+}
+
+#formClose {
+  color: white;
+  background-color: darkgreen;
+  float: right;
+  border-style: solid;
+  border-width: 1px;
+  padding: 1px 5px;
+  font-size: 20px;
+}
+
+#formClose:hover, #formClose:active {
+  background-color: purple;
+  cursor: pointer;
+}
+
+#formSubmit:hover, #formSubmit:active,
+#formReset:hover, #formReset:active {
+  background: purple;
+  cursor: pointer;
+}
+
+#submitSpinner {
+    font-size : 48px;
+    color: darkgreen;
+    margin: auto;
+    display: none;
+}
+
+.resultImage {
+  float: right;
+  border: 1px solid purple;
+}
+.colInfo {
+  padding: 10px;
+  background-color: lightgreen;
+  white-space: nowrap;
+  border: 3px solid purple;
+  border-right: 0;
+}
+.colImage {
+  background-color: lightgreen;
+  padding: 10px;
+  width: 99%;
+  border: 3px solid purple;
+  border-left: none;
+}
+
+td > p {
+  color: lightpurple;
+}
+
+table {
+  border-collapse: collapse;
+}
+
+
