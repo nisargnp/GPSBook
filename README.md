@@ -51,4 +51,4 @@
 <br>
 
 ## Video Demo
-<a href="https://youtu.be/MPv1wcXztvc">Link to video demo.</a>
+<a target="_blank" href="https://youtu.be/MPv1wcXztvc">Link to video demo.</a>
