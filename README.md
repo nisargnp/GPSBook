@@ -49,3 +49,6 @@
 <br>
 <img src="https://github.com/nisargnp/GPSBook/blob/master/resources/architecture_diagram.png" hspace="20">
 <br>
+
+## Video Demo
+<a href="https://youtu.be/MPv1wcXztvc">Link</a> to video demo.
